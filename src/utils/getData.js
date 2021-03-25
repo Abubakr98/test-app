@@ -3,7 +3,6 @@ const url =
 const getData = () => {
   return fetch(url)
     .then((response) => response.json())
-    .then((json) => json);
 };
 export const canIShowImages = async () => {
   const res = await Promise.all([getData(), getData()]);
