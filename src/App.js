@@ -13,7 +13,6 @@ function App() {
   }, [])
   async function fetchData() {
     const res = await canIShowImages();
-    if (!res) fetchData()
     setLoaded(res);
   }
   const images = [first, second, third];
