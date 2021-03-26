@@ -8,14 +8,14 @@ import Skeleton from 'react-loading-skeleton';
 
 function App() {
   const [isLoad, setLoaded] = useState(false)
+  useEffect(() => {
+    fetchData()
+  }, [])
   async function fetchData() {
     const res = await canIShowImages();
     if (!res) fetchData()
     setLoaded(res);
   }
-  useEffect(() => {
-    fetchData()
-  }, [])
   const images = [first, second, third];
   return (
     <div className='App'>
